@@ -1,0 +1,11 @@
+{
+  "name": "news-headline",
+  "version": "0.0.1",
+  "description": "Gets headlines from news sites",
+  "main": "index.js",
+  "author": "pippinlee",
+  "license": "MIT",
+  "dependencies": {
+    "scraperjs": "0.3.0"
+  }
+}
