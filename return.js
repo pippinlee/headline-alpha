@@ -5,10 +5,17 @@
 var news = require("./module.js");
 var scraper = require("./scraper.js");
 
-news.start(function(data){
-  scraper.scrape(function(news){
-    var place = data.canada.toronto.cbc.query;
-    news(place);
+news.start(function(err, data){
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  var source = data.canada.toronto.cbc;
+  scraper.scrape(source, function(err, news){
+    if (err) console.error(err);
+
+    console.log(news); // news(place); -- This isn't a function?
   });
 });
 
